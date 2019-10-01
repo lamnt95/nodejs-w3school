@@ -1,9 +1,9 @@
 const http = require("http");
-const file = require("./src/file");
+const fileServer = require("./src/fileServer");
 
 http
   .createServer(function(req, res) {
-    file.deleteFile(res);
+    fileServer.readFile(req, res);
   })
   .listen(8080);
 
