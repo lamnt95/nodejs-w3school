@@ -1,12 +1,9 @@
 const http = require("http");
-const url = require("url");
-const time = require("./src/time");
+const file = require("./src/file");
 
 http
   .createServer(function(req, res) {
-    res.writeHead(200, { "Content-Type": "text/html" });
-    const { year, month } = url.parse(req.url, true).query;
-    res.end("year " + year + " month " + month);
+    file.deleteFile(res);
   })
   .listen(8080);
 
